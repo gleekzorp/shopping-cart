@@ -3,7 +3,7 @@ import Product from './Product';
 
 export default () => {
   return (
-    <div>
+    <div className="product-container">
       <Product />
     </div>
   )

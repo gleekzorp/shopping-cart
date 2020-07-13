@@ -1,0 +1,14 @@
+$backgroundOne: lightgreen;
+$backgroundTwo: lightblue;
+$navFontSize: 2rem;   
+$navPadding: 0.5rem; 
+$footerFontSize: 1rem;
+$footerPadding: 1rem;
+// TODO:  Not calculating the total correct
+$mainHeight: calc(
+  100vh
+  - #{$navFontSize}
+  - (2 * #{$navPadding})
+  - #{$footerFontSize}
+  - (2 * #{$footerPadding})
+);

@@ -1,0 +1,14 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html,body {
+  padding:0;
+  margin:0;
+}
+
+.shopping-cart-container {
+  height: $mainHeight;
+  background-color: $backgroundTwo;
+  overflow-y: auto;
+}

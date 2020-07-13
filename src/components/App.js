@@ -10,8 +10,10 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <ProductContainer />
-      <Summary />
+      <div className="shopping-cart-container">
+        <ProductContainer />
+        <Summary />
+      </div>
       <Footer />
     </div>
   );
