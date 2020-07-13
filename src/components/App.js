@@ -5,16 +5,19 @@ import Nav from './Nav';
 import ProductContainer from './ProductContainer';
 import Summary from './Summary';
 import Footer from './Footer';
+import ProductsProvider from '../providers/ProductsProvider';
 
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <div className="shopping-cart-container">
-        <ProductContainer />
-        <Summary />
-      </div>
-      <Footer />
+      <ProductsProvider>
+        <Nav />
+        <div className="shopping-cart-container">
+          <ProductContainer />
+          <Summary />
+        </div>
+        <Footer />
+      </ProductsProvider>
     </div>
   );
 }

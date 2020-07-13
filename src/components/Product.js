@@ -1,16 +1,17 @@
 import React from 'react';
 
 export default (props) => {
+  const {title, price, count} = props.product
   return (
     <div className="product-wrapper">
       <div className="product-title">
-        Title
+        {title}
       </div>
       <div className="product-price">
-        Price
+        ${price}
       </div>
       <div className="product-count">
-        Count
+        x{count}
       </div>
     </div>
   )
