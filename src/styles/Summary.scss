@@ -1,6 +1,6 @@
 .summary-container {
   width: 90%;
-  margin: 0 auto;
+  margin: 4em auto;
 }
 
 .summary-item {
@@ -8,4 +8,5 @@
   padding: 1em;
   margin: 1em;
   background-color: $backgroundOne;
+  border: 1px solid black;
 }
