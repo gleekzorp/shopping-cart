@@ -16,3 +16,31 @@ export const generateRandomListOfProducts = (numOfProducts) => {
   })
   return products
 }
+
+export const totalProductsCount = (products) => {
+  if (products.length > 0) {
+    const count = products.reduce((accumulator, product) => {
+      console.log(typeof product.count)
+      return accumulator + product.count
+    }, 0)
+    return count
+  }
+  return 0
+}
+
+export const cartTotal = (products) => {
+  if (products.length > 0) {
+    const count = products.reduce((accumulator, product) => {
+      console.log(typeof product.count)
+      return accumulator + parseFloat(product.price) * product.count
+    }, 0).toFixed(2)
+    return count
+  }
+  return 0
+}
+
+export const taxRate = roll(5, 9, 1).toFixed(1)
+
+export const taxedTotal = (taxRate, cartTotal) => {
+  return (taxRate / 100 * cartTotal + parseFloat(cartTotal)).toFixed(2)
+}

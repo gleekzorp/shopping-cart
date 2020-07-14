@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductsContext from '../contexts/ProductsContext';
-import { generateRandomListOfProducts } from '../helpers/productsHelper';
+import { generateRandomListOfProducts, taxRate } from '../helpers/productsHelper';
 
 export default (props) => {
   const [products, setProducts] = useState([]);
@@ -10,7 +10,8 @@ export default (props) => {
   }, [])
 
   const stateValues = {
-    products
+    products,
+    taxRate: taxRate
   }
 
   return (
