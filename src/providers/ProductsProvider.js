@@ -5,7 +5,8 @@ import {
   randomTaxRate,
   calculateProductsCount,
   calculateCartTotal,
-  calculateTaxedTotal
+  calculateTaxedTotal,
+  calculateTotalWeight
 } from '../helpers/productsHelper';
 
 export default (props) => {
@@ -14,6 +15,7 @@ export default (props) => {
   const [taxRate, setTaxRate] = useState(0)
   const [cartTotal, setCartTotal] = useState(0)
   const [taxedTotal, setTaxedTotal] = useState(0)
+  const [totalWeight, setTotalWeight] = useState(0)
 
   useEffect(() => {
     setProducts(generateRandomListOfProducts(5))
@@ -23,6 +25,7 @@ export default (props) => {
     setProductsCount(calculateProductsCount(products))
     setTaxRate(randomTaxRate)
     setCartTotal(calculateCartTotal(products))
+    setTotalWeight(calculateTotalWeight(products))
   }, [products])
 
   useEffect(() => {
@@ -34,7 +37,8 @@ export default (props) => {
     productsCount,
     cartTotal,
     taxRate,
-    taxedTotal
+    taxedTotal,
+    totalWeight
   }
 
   return (

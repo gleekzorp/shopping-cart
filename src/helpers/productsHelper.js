@@ -13,6 +13,7 @@ export const generateRandomListOfProducts = (numOfProducts, listOfProducts = pos
       index: i,
       title: listOfProducts[roll(0, listOfProducts.length)],
       price: roll(2, 10, 1).toFixed(2),
+      weight: roll(6, 20, 1).toFixed(2),
       count: roll(1, 6)
     }
   })
@@ -35,7 +36,6 @@ export const calculateProductsCount = (products) => {
 export const calculateCartTotal = (products) => {
   if (products.length > 0) {
     const count = products.reduce((accumulator, product) => {
-      console.log(typeof product.count)
       return accumulator + parseFloat(product.price) * product.count
     }, 0).toFixed(2)
     // return parseFloat(count)
@@ -52,4 +52,15 @@ export const randomTaxRate = roll(5, 9, 1).toFixed(1)
 export const calculateTaxedTotal = (taxRate, cartTotal) => {
   // return parseFloat((taxRate / 100 * cartTotal + parseFloat(cartTotal)).toFixed(2))
   return (taxRate / 100 * cartTotal + parseFloat(cartTotal)).toFixed(2)
+}
+
+
+export const calculateTotalWeight = (products) => {
+  if (products.length > 0) {
+    const weight = products.reduce((accumulator, product) => {
+      return accumulator + parseFloat(product.weight) * product.count
+    }, 0).toFixed(2)
+    return weight
+  }
+  return 0
 }
